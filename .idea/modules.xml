@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Adapter-X.iml" filepath="$PROJECT_DIR$/Adapter-X.iml" />
-      <module fileurl="file://$PROJECT_DIR$/adapter-compiler/adapter-compiler.iml" filepath="$PROJECT_DIR$/adapter-compiler/adapter-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/adapter-x/adapter-x.iml" filepath="$PROJECT_DIR$/adapter-x/adapter-x.iml" />
+      <module fileurl="file://$PROJECT_DIR$/adapter-x-compiler/adapter-x-compiler.iml" filepath="$PROJECT_DIR$/adapter-x-compiler/adapter-x-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/annotation/annotation.iml" filepath="$PROJECT_DIR$/annotation/annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/crashviewer/crashviewer.iml" filepath="$PROJECT_DIR$/crashviewer/crashviewer.iml" />

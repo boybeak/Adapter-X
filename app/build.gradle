@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     kapt 'androidx.databinding:databinding-compiler:3.2.1'
     implementation project(':adapter-x')
-    kapt project(':adapter-compiler')
+    kapt project(':adapter-x-compiler')
     //    implementation 'com.github.boybeak:adapter:5.0.1'
     //    kapt 'com.github.boybeak:adapter-compiler:5.0.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'

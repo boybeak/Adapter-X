@@ -1,1 +1,1 @@
-include ':app', ':adapter-x', ':adapter-compiler', ':annotation', ':crashviewer'
+include ':app', ':adapter-x', ':adapter-x-compiler', ':annotation', ':crashviewer'
