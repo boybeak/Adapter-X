@@ -12,6 +12,7 @@ buildscript {
         dokka_version = '0.9.17'
         gradle_version = '3.2.0'
         nav_version = '1.0.0-alpha07'
+        paging_version = '2.1.0-beta01'
     }
     repositories {
         google()

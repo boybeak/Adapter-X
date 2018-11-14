@@ -40,10 +40,18 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.4.0'
 
-    implementation "android.arch.navigation:navigation-fragment:$nav_version" // use -ktx for Kotlin
-    implementation "android.arch.navigation:navigation-ui:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-fragment-ktx:$nav_version" // use -ktx for Kotlin
+    implementation "android.arch.navigation:navigation-ui-ktx:$nav_version" // use -ktx for Kotlin
 
     // optional - Test helpers
     // this library depends on the Kotlin standard library
     androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version"
+
+    implementation "androidx.paging:paging-runtime:$paging_version" // use -ktx for Kotlin
+
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common:$paging_version" // use -ktx for Kotlin
+
+    // optional - RxJava support
+    implementation "androidx.paging:paging-rxjava2:$paging_version" // use -ktx for Kotlin
 }

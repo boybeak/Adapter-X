@@ -8,4 +8,10 @@
         >
 
     </fragment>
+    <fragment
+        android:id="@+id/fragment_crash_detail"
+        android:name="com.github.boybeak.crashviewer.ui.main.CrashDetailFragment"
+        >
+        <argument android:name="crash_id" app:argType="string"/>
+    </fragment>
 </navigation>
