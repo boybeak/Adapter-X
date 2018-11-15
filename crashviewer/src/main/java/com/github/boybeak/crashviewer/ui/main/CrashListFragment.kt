@@ -11,6 +11,7 @@ import androidx.paging.PagedList
 import com.github.boybeak.autobind.Crash
 import com.github.boybeak.crashviewer.R
 import com.github.boybeak.crashviewer.adapter.CrashAdapter
+import com.github.boybeak.crashviewer.api.Netstate
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class CrashListFragment : Fragment() {
@@ -33,11 +34,15 @@ class CrashListFragment : Fragment() {
 
         recyclerView.adapter = crashListAdapter
 
-        viewModel.getCrashListLiveData().observe(this, object : Observer<PagedList<Crash>>{
-            override fun onChanged(t: PagedList<Crash>?) {
-                crashListAdapter.submitList(t)
-            }
+        viewModel.getCrashListLiveData().observe(this, Observer<PagedList<Crash>> { t ->
+            crashListAdapter.submitList(t)
         })
+        viewModel.dataSource().getInitalLoading().observe(this, Observer<Int> { t ->
+            swipeRefreshLayout.isRefreshing = t == Netstate.LOADING
+        })
+        swipeRefreshLayout.setOnRefreshListener {
+        }
+
     }
 
 }

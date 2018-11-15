@@ -5,15 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.github.boybeak.autobind.Crash
+import com.github.boybeak.crashviewer.paging.CrashListDataSource
 import com.github.boybeak.crashviewer.paging.CrashListDataSourceFactory
 
 class CrashListViewModel : ViewModel() {
 //    private var networkState: MutableLiveData<Int>
     private val dataList: LiveData<PagedList<Crash>>
+    private var source: CrashListDataSource
 
     init {
         val factory = CrashListDataSourceFactory()
-        val source = factory.create()
+        source = factory.create()
 //        networkState = Transformations.switchMap(factory.dataSourceLiveData(), object : Function<LiveData<*>, LiveData<Int>>(){})
         val config = PagedList.Config.Builder()
                 .setInitialLoadSizeHint(24)
@@ -27,6 +29,10 @@ class CrashListViewModel : ViewModel() {
 
     fun getCrashListLiveData(): LiveData<PagedList<Crash>> {
         return dataList
+    }
+
+    fun dataSource(): CrashListDataSource {
+        return source
     }
 
 }

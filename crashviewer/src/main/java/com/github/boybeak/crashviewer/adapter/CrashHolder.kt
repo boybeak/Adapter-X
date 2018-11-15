@@ -30,7 +30,7 @@ class CrashHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         itemView.setOnClickListener {
             val args = Bundle()
-            args.putString("crash_id", crash.id)
+            args.putInt("crash_id", crash.id)
             it.findNavController().navigate(R.id.fragment_crash_detail, args)
         }
     }

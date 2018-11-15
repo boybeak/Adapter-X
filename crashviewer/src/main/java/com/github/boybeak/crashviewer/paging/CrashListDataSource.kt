@@ -53,6 +53,9 @@ class CrashListDataSource : PageKeyedDataSource<Int, Crash>() {
 
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Crash>) {
         Log.v(TAG, "loadAfter ${params.key}")
+        if (networkState.value == Netstate.LOADING) {
+            return
+        }
         networkState.postValue(Netstate.LOADING)
         val key = params.key
         getCall(key, params.requestedLoadSize).enqueue(object : Callback<Return<List<Crash>>>{

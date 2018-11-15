@@ -9,7 +9,7 @@ import java.util.regex.Pattern
 class Crash() : Parcelable {
 
     var sdk_int: Int = 0
-    var id: String? = null
+    var id: Int = 0
     var incermental: String? = null
     var model: String? = null
     var simple_crash_info: String? = null
@@ -45,7 +45,7 @@ class Crash() : Parcelable {
 
     constructor(parcel: Parcel) : this() {
         sdk_int = parcel.readInt()
-        id = parcel.readString()
+        id = parcel.readInt()
         incermental = parcel.readString()
         model = parcel.readString()
         simple_crash_info = parcel.readString()
@@ -67,7 +67,7 @@ class Crash() : Parcelable {
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(sdk_int)
-        parcel.writeString(id)
+        parcel.writeInt(id)
         parcel.writeString(incermental)
         parcel.writeString(model)
         parcel.writeString(simple_crash_info)

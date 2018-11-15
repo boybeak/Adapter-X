@@ -9,7 +9,7 @@ class CrashListDataSourceFactory : DataSource.Factory<Int, Crash>() {
     private val dataSourceData = MutableLiveData<CrashListDataSource>()
     private val dataSource = CrashListDataSource()
 
-    override fun create(): DataSource<Int, Crash> {
+    override fun create(): CrashListDataSource {
         dataSourceData.postValue(dataSource)
         return dataSource
     }
