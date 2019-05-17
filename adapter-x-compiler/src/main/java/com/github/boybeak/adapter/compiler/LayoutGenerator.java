@@ -142,7 +142,17 @@ public class LayoutGenerator {
     }
 
     private static TypeName getMemberType(Member member) {
-        return ParameterizedTypeName.get(getMemberTypeClassName(member), getTypes(member));
+        TypeName[] generics = getTypes(member);
+        if (generics == null || generics.length == 0) {
+            TypeMirror clazzType;
+            try {
+                return ClassName.get(member.type());
+            } catch (MirroredTypeException mte) {
+                clazzType = mte.getTypeMirror();
+            }
+            return TypeName.get(clazzType);
+        }
+        return ParameterizedTypeName.get(getMemberTypeClassName(member), generics);
     }
 
     private static ClassName getMemberTypeClassName(Member member) {
